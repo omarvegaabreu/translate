@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
+import { MultiSelect } from "react-multi-select-component";
 // import { Dropdown, Menu } from "semantic-ui-react";
 
-const DropdownMenu = ({ options, selected, onChangeSelected }) => {
+const DropdownMenu = ({ label, options, selected, onChangeSelected }) => {
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const ref = useRef();
 
   //LABEL VARIABLES
-  const LABEL_1 = "Select a language";
+  // const LABEL_1 = "Select a language";
 
   useEffect(() => {
     const onBodyClick = (event) => {
@@ -62,9 +63,10 @@ const DropdownMenu = ({ options, selected, onChangeSelected }) => {
   return (
     <div ref={ref} className="ui form">
       <div className="field">
-        <label className="label">{LABEL_1}</label>{" "}
+        <label className="label">{label}</label>{" "}
         {/* //LABEL 1 TOP OF PAGE VARIABLES */}
         <div
+          // label={label}
           onClick={() => setToggleDropdown(!toggleDropdown)}
           className={`ui selection dropdown ${
             toggleDropdown ? "visible active" : ""

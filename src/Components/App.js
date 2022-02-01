@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "semantic-ui-react";
+import Convert from "./Convert";
 
 import Translate from "./Translate";
 
